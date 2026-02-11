@@ -55,11 +55,10 @@
             align-items: center;
         }
 
-        /* Lavender */
         .stemLavender {
             position: absolute;
-            width: 5px;
-            height: 150px;
+            width: 3.5px;
+            height: 105px;
             background: green;
             bottom: 0;
             animation: sway 3s ease-in-out infinite alternate, growStem 2s ease-in-out forwards;
@@ -70,13 +69,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            top: -150px;
+            top: -105px;
             animation: sway 3s ease-in-out infinite alternate;
         }
 
         .petalLavender {
-            width: 15px;
-            height: 15px;
+            width: 11px;
+            height: 11px;
             background: purple;
             border-radius: 50%;
             margin: 2px;
@@ -86,17 +85,17 @@
         /* Flower */
         .stemFlower {
             position: absolute;
-            width: 10px;
+            width: 7px;
             height: 0;
             background: green;
-            bottom: 50px;
+            bottom: 35px;
             animation: growStem 2s ease-in-out forwards, sway 3s ease-in-out infinite alternate;
         }
 
         .leaf {
             position: absolute;
-            width: 30px;
-            height: 20px;
+            width: 21px;
+            height: 14px;
             background: green;
             border-radius: 50%;
             opacity: 0;
@@ -104,21 +103,21 @@
         }
 
         .leaf.left {
-            left: 15px;
-            bottom: 80px;
+            left: 10.5px;
+            bottom: 56px;
             transform: rotate(-30deg);
         }
 
         .leaf.right {
-            right: 15px;
-            bottom: 110px;
+            right: 10.5px;
+            bottom: 77px;
             transform: rotate(30deg);
         }
 
         .flower {
             position: relative;
-            width: 100px;
-            height: 100px;
+            width: 70px;
+            height: 70px;
             transform: translateY(100px);
             opacity: 0;
             animation: elevate 2s ease-in-out 2s forwards, sway 3s ease-in-out infinite alternate;
@@ -126,26 +125,26 @@
 
         .petalFlower {
             position: absolute;
-            width: 40px;
-            height: 80px;
+            width: 28px;
+            height: 56px;
             background: pink;
             border-radius: 50%;
             opacity: 0.8;
-            top: -135px;
-            left: 30px;
-            transform-origin: center 50px;
+            top: -95px;
+            left: 21px;
+            transform-origin: center 35px;
             transform: rotate(0deg) scale(0);
             animation: bloom 2s ease-in-out 1s forwards;
         }
 
         .center {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 21px;
+            height: 21px;
             background: yellow;
             border-radius: 50%;
-            top: -100px;
-            left: 35px;
+            top: -70px;
+            left: 24.5px;
             opacity: 0;
             animation: bloomCenter 4s ease-in-out 1.5s forwards, sway 3s ease-in-out infinite alternate;
         }
@@ -157,7 +156,7 @@
 
         @keyframes growStem {
             0% { height: 0; }
-            100% { height: 150px; }
+            100% { height: 105px; }
         }
 
         @keyframes elevate {
@@ -180,28 +179,216 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
+        /* Grass */
+        .grass {
+            position: absolute;
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to top, #7cb342, #9ccc65);
+            bottom: 0;
+            animation: sway 2s ease-in-out infinite alternate;
+        }
+
+        .grass-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            pointer-events: none;
+        }
+
+        .stemSunflower {
+            position: absolute;
+            width: 5.6px;
+            height: 0;
+            background: linear-gradient(to top, #558b2f, #7cb342);
+            bottom: 56px;
+            animation: growStem 2.5s ease-in-out forwards, sway 3s ease-in-out infinite alternate;
+        }
+
+        .sunflower {
+            position: relative;
+            width: 98px;
+            height: 98px;
+            transform: translateY(100px);
+            opacity: 0;
+            animation: elevate 2.5s ease-in-out 2s forwards, sway 3s ease-in-out infinite alternate;
+        }
+
+        .petalSunflower {
+            position: absolute;
+            width: 35px;
+            height: 63px;
+            background: #fdd835;
+            border-radius: 50% 50% 50% 30%;
+            opacity: 0.9;
+            top: -101px;
+            left: 32.5px;
+            transform-origin: center 42px;
+            transform: rotate(0deg) scale(0);
+            animation: bloom 2.5s ease-in-out 1s forwards;
+        }
+
+        .sunflowerCenter {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: radial-gradient(circle at 35% 35%, #8b7355, #3d2817);
+            border-radius: 50%;
+            top: -80px;
+            left: 31.5px;
+            opacity: 0;
+            animation: bloomCenter 4s ease-in-out 1.5s forwards, sway 3s ease-in-out infinite alternate;
+            box-shadow: inset -2px -2px 8px rgba(0,0,0,0.4), inset 1px 1px 3px rgba(139, 115, 85, 0.5);
+        }
+
         button {
-            margin-bottom: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            background-color: #ff69b4;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
+            display: none;
+        }
+
+        /* Watering Can */
+        .watering-can {
             position: fixed;
-            top: 10px;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
             z-index: 1000;
+            pointer-events: none;
+        }
+
+        .watering-can svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .water-droplet {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(100, 200, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: waterFall 1s ease-in forwards;
+        }
+
+        @keyframes waterFall {
+            0% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(100px); }
+        }
+
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.9), rgba(216, 27, 96, 0.9));
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .music-player audio {
+            height: 30px;
+            width: 250px;
+        }
+
+        .music-player audio::-webkit-media-controls-panel {
+            background-color: transparent;
+        }
+
+        .music-toggle {
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
+            background: #ffd700;
+        }
+
+        .music-label {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            white-space: nowrap;
         }
     </style>
 </head>
 <body>
-    <button id="generateButton">Generate Plant</button>
+    <!-- Music Player -->
+    <div class="music-player">
+        <span class="music-label">🎵 Garden Music</span>
+        <audio id="gardenMusic" controls autoplay loop>
+            <source src="/Laufey - From The Start (Official Music Video).mp3" type="audio/mpeg">
+            Your browser does not support the audio element. Please update the audio source in the code.
+        </audio>
+    </div>
+
+    <div class="watering-can" id="wateringCan">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Can body -->
+            <ellipse cx="40" cy="50" rx="25" ry="30" fill="#d4a017" stroke="#8b7500" stroke-width="2"/>
+            <!-- Can spout -->
+            <path d="M 65 55 Q 85 50 90 40" stroke="#d4a017" stroke-width="8" fill="none" stroke-linecap="round"/>
+            <!-- Can handle -->
+            <path d="M 50 25 Q 65 15 65 35" stroke="#8b7500" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <!-- Water inside can -->
+            <ellipse cx="40" cy="60" rx="20" ry="12" fill="#64b8ff" opacity="0.7"/>
+        </svg>
+    </div>
     <div class="garden"></div>
 
     <script>
+        // Initialize Music Player
+        // To use YouTube Music, extract the track/video ID and update the audioElement
+        const gardenMusicElement = document.getElementById('gardenMusic');
+        
+        // You can replace this with any YouTube Music URL or audio file URL
+        // YouTube Music streams need to be converted to playable audio links
+        // For now, using a placeholder - replace with your desired music link
+        
+        // Function to update music source from YouTube or other sources
+        function updateMusicSource(youtubeUrl) {
+            // Extract YouTube video ID if provided
+            const youtubeRegex = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+            const match = youtubeUrl.match(youtubeRegex);
+            
+            if (match) {
+                const videoId = match[1];
+                // Note: Direct YouTube playback requires API authentication
+                // For now, we'll use the YouTube embed or audio file
+                console.log('YouTube Music player - Update this URL with your actual music link');
+            }
+        }
+        
+        // Auto-play music when page loads
+        window.addEventListener('load', function() {
+            if (gardenMusicElement) {
+                gardenMusicElement.play().catch(function(error) {
+                    console.log('Autoplay prevented by browser. User can click play manually.');
+                });
+            }
+        });
+
         // Magical sparkles
-        const numSparkles = 50;
+        const numSparkles = 100;
         for (let i = 0; i < numSparkles; i++) {
             const sparkle = document.createElement('div');
             sparkle.classList.add('sparkle');
@@ -213,23 +400,136 @@
             document.body.appendChild(sparkle);
         }
 
+        // Generate grasses at the bottom for meadow effect
+        function generateMeadowGrass() {
+            const garden = document.querySelector('.garden');
+            const grassContainer = document.createElement('div');
+            grassContainer.classList.add('grass-container');
+            
+            for (let i = 0; i < 200; i++) {
+                const grass = document.createElement('div');
+                grass.classList.add('grass');
+                grass.style.left = `${Math.random() * 100}%`;
+                grass.style.bottom = `${Math.random() * 80}px`;
+                grass.style.height = `${10 + Math.random() * 30}px`;
+                grass.style.animationDuration = `${1.5 + Math.random() * 1.5}s`;
+                grass.style.animationDelay = `${Math.random() * 2}s`;
+                grassContainer.appendChild(grass);
+            }
+            
+            garden.appendChild(grassContainer);
+        }
+
         function generateRandomPlant() {
-            if (Math.random() < 0.5) {
-                generateFlower();
+            const type = Math.random();
+            if (type < 0.33) {
+                generateFlowerAt(Math.random() * 90 + 5, Math.random() * 70 + 20);
+            } else if (type < 0.66) {
+                generateLavenderAt(Math.random() * 90 + 5, Math.random() * 70 + 20);
             } else {
-                generateLavender();
+                generateSunflowerAt(Math.random() * 90 + 5, Math.random() * 70 + 20);
             }
         }
 
-        document.getElementById('generateButton').addEventListener('click', generateRandomPlant);
+        // Generate initial meadow with multiple plants
+        window.addEventListener('load', function() {
+            generateMeadowGrass();
+            
+            // Generate 8-12 random plants on page load
+            const plantCount = 8 + Math.floor(Math.random() * 5);
+            for (let i = 0; i < plantCount; i++) {
+                setTimeout(generateRandomPlant, i * 300);
+            }
+        });
 
-        function generateFlower() {
+        // Watering can interaction - OPTIMIZED
+        const wateringCan = document.getElementById('wateringCan');
+        const garden = document.querySelector('.garden');
+        let isWatering = false;
+        let lastWateringTime = 0;
+        let gardenRect = garden.getBoundingClientRect();
+
+        // Update garden rect on window resize
+        window.addEventListener('resize', function() {
+            gardenRect = garden.getBoundingClientRect();
+        });
+
+        document.addEventListener('mousedown', function() {
+            isWatering = true;
+        });
+
+        document.addEventListener('mouseup', function() {
+            isWatering = false;
+        });
+
+        // Consolidated and THROTTLED mousemove handler
+        document.addEventListener('mousemove', function(e) {
+            // Update watering can position
+            wateringCan.style.left = (e.clientX - 30) + 'px';
+            wateringCan.style.top = (e.clientY - 30) + 'px';
+
+            if (isWatering) {
+                const now = Date.now();
+                // Throttle to every 100ms to reduce lag
+                if (now - lastWateringTime < 100) return;
+                lastWateringTime = now;
+
+                // Create water droplets (2-3 per cycle)
+                const dropletCount = Math.random() < 0.6 ? 2 : 3;
+                for (let i = 0; i < dropletCount; i++) {
+                    const droplet = document.createElement('div');
+                    droplet.classList.add('water-droplet');
+                    droplet.style.left = (e.clientX - 5 + Math.random() * 80 - 40) + 'px';
+                    droplet.style.top = (e.clientY - 5 + Math.random() * 80 - 40) + 'px';
+                    document.body.appendChild(droplet);
+                    
+                    setTimeout(() => droplet.remove(), 1000);
+                }
+
+                // Check if mouse is over the garden area
+                if (e.clientX >= gardenRect.left && e.clientX <= gardenRect.right &&
+                    e.clientY >= gardenRect.top && e.clientY <= gardenRect.bottom) {
+                    
+                    const gardenX = ((e.clientX - gardenRect.left) / gardenRect.width) * 100;
+                    const gardenY = ((e.clientY - gardenRect.top) / gardenRect.height) * 100;
+                    
+                    // Generate fewer flowers (reduced from 2-4 to 2-3)
+                    const flowerCount = Math.random() < 0.5 ? 2 : 3;
+                    for (let i = 0; i < flowerCount; i++) {
+                        // Create random circular distribution
+                        const angle = Math.random() * Math.PI * 2;
+                        const distance = Math.random() * 8;
+                        const offsetX = Math.cos(angle) * distance;
+                        const offsetY = Math.sin(angle) * distance;
+                        
+                        const finalX = gardenX + offsetX;
+                        const finalY = gardenY + offsetY;
+                        
+                        // Only generate if within garden bounds
+                        if (finalX > 0 && finalX < 100 && finalY > 0 && finalY < 100) {
+                            const type = Math.random();
+                            if (type < 0.25) {
+                                generateFlowerAt(finalX, finalY);
+                            } else if (type < 0.45) {
+                                generateLavenderAt(finalX, finalY);
+                            } else if (type < 0.65) {
+                                generateSunflowerAt(finalX, finalY);
+                            } else {
+                                generateGrassAt(finalX, finalY);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        function generateFlowerAt(x, y) {
             const garden = document.querySelector('.garden');
             const flowerContainer = document.createElement('div');
             flowerContainer.classList.add('container');
             flowerContainer.style.position = 'absolute';
-            flowerContainer.style.left = `${Math.random() * 90 + 5}%`;
-            flowerContainer.style.top = `${Math.random() * 70 + 20}%`;
+            flowerContainer.style.left = `${x}%`;
+            flowerContainer.style.top = `${y}%`;
 
             const stem = document.createElement('div');
             stem.classList.add('stemFlower');
@@ -262,12 +562,12 @@
             garden.appendChild(flowerContainer);
         }
 
-        function generateLavender() {
+        function generateLavenderAt(x, y) {
             const garden = document.querySelector('.garden');
             const lavenderContainer = document.createElement('div');
             lavenderContainer.classList.add('container');
-            lavenderContainer.style.left = `${Math.random() * 90 + 5}%`;
-            lavenderContainer.style.top = `${Math.random() * 70 + 20}%`;
+            lavenderContainer.style.left = `${x}%`;
+            lavenderContainer.style.top = `${y}%`;
 
             const stem = document.createElement('div');
             stem.classList.add('stemLavender');
@@ -284,6 +584,63 @@
             lavenderContainer.appendChild(stem);
             lavenderContainer.appendChild(lavender);
             garden.appendChild(lavenderContainer);
+        }
+
+        function generateSunflowerAt(x, y) {
+            const garden = document.querySelector('.garden');
+            const sunflowerContainer = document.createElement('div');
+            sunflowerContainer.classList.add('container');
+            sunflowerContainer.style.position = 'absolute';
+            sunflowerContainer.style.left = `${x}%`;
+            sunflowerContainer.style.top = `${y}%`;
+
+            const stem = document.createElement('div');
+            stem.classList.add('stemSunflower');
+
+            const sunflower = document.createElement('div');
+            sunflower.classList.add('sunflower');
+
+            for (let i = 0; i < 12; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('petalSunflower');
+                petal.style.setProperty('--rotation', `${i * 30}deg`);
+                sunflower.appendChild(petal);
+            }
+
+            const center = document.createElement('div');
+            center.classList.add('sunflowerCenter');
+            sunflower.appendChild(center);
+
+            sunflowerContainer.appendChild(stem);
+            sunflowerContainer.appendChild(sunflower);
+            
+            garden.appendChild(sunflowerContainer);
+        }
+
+        function generateGrassAt(x, y) {
+            const garden = document.querySelector('.garden');
+            const grassClump = document.createElement('div');
+            grassClump.classList.add('container');
+            grassClump.style.position = 'absolute';
+            grassClump.style.left = `${x}%`;
+            grassClump.style.top = `${y}%`;
+
+            // Create 3-5 blades of grass in a small clump
+            const bladeCount = Math.floor(Math.random() * 3) + 3;
+            for (let i = 0; i < bladeCount; i++) {
+                const grass = document.createElement('div');
+                grass.classList.add('grass');
+                grass.style.position = 'absolute';
+                grass.style.left = (Math.random() * 20 - 10) + 'px';
+                grass.style.bottom = (Math.random() * 10) + 'px';
+                grass.style.height = `${10 + Math.random() * 15}px`;
+                grass.style.width = '2px';
+                grass.style.animationDuration = `${1.5 + Math.random() * 1.5}s`;
+                grass.style.animationDelay = `${Math.random() * 0.5}s`;
+                grassClump.appendChild(grass);
+            }
+
+            garden.appendChild(grassClump);
         }
     </script>
 </body>
